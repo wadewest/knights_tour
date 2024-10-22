@@ -10,3 +10,4 @@ const path_queue = new Queue();
 const tiles = new TileSet(rows, cols);
 const zero_path = new Path(tiles);
 
+
