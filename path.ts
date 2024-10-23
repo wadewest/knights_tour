@@ -4,15 +4,15 @@ export default class Path
 
 	constructor(obj)
 	{
-    this.status = "enroute"
-    this.route = new Array();
-    this.remaining = new Set();
+		this.status = "enroute"
+		this.route = new Array();
+		this.remaining = new Set();
 		if(!obj) return;
-    if(obj instanceof Set)
-    {
-      this.remaining = new Set(obj);
-      return;
-    }
+		if(obj instanceof Set)
+		{
+			this.remaining = new Set(obj);
+			return;
+		}
 		if(obj.constructor == this.constructor)
 		{
 			this.status = obj.status;
@@ -35,9 +35,9 @@ export default class Path
 		return this;
 	}
 
-	clone()
+	cloneTo(tile)
 	{
-		let new_path = new this.constructor(this);
+		return (new this.constructor(this)).push(tile);
 	}
 
 }
