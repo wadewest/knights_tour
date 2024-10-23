@@ -32,5 +32,10 @@ export default class Queue
 		return this.items.get(this.front_index);
 	}
 
+	size()
+	{
+		return this.items.size;
+	}
+
 }
 

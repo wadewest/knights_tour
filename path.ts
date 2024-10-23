@@ -20,6 +20,7 @@ export default class Path
 			this.remaining = new Set(obj.remaining);
 			return;
 		}
+		Object.assign(this, obj);
 	}
 
 	head()

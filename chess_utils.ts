@@ -2,9 +2,7 @@
 export function nextPossibleMoves(tile, rows, cols)
 {
   let result = new Set();
-  let current = reverseBoardLookup(tile);
-  let row = current[0];
-  let col = current[1];
+  let [row, col] = reverseBoardLookup(tile);
   for(let row_offset of [-2, -1, 1, 2])
   {
     let next_row = row+row_offset;

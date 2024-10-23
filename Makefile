@@ -1,3 +1,3 @@
 
 default:
-	deno run main.ts
+	deno run --allow-read main.ts
