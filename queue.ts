@@ -1,14 +1,16 @@
 export default class Queue
 {
 
+  front_index = 0n;
+  back_index = 0n;
+  items: Map<bigint, any>;
+
 	constructor()
 	{
-		this.front_index = 0n;
-		this.back_index = 0n;
 		this.items = new Map();
 	}
 
-	push(item)
+	push(item: any)
 	{
 		this.items.set(this.back_index, item);
 		this.back_index++;
@@ -32,7 +34,7 @@ export default class Queue
 		return this.items.get(this.front_index);
 	}
 
-	size()
+	get size()
 	{
 		return this.items.size;
 	}

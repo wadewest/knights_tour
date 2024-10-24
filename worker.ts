@@ -86,7 +86,7 @@ function processMove(path)
   }
   postMessage({
     type: "enqueue",
-		size: path_queue.size(),
+		size: path_queue.size,
     paths: next_moves.values().map(n => {
       return path.cloneTo(n);
     }).toArray()
