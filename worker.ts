@@ -34,7 +34,7 @@ handleCommand("enqueue", (data) => {
 	if(!!data.path) 
 	{
 		path_queue.push(new Path(data.path));
-		sendReply("enqueue", {size: path_queue.size()});
+		sendReply("enqueue", {size: path_queue.size});
 		return;
 	}
 	sendReply("enqueue");

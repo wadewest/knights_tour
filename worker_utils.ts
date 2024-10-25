@@ -1,17 +1,18 @@
-export default function extendWorker(worker) 
+
+export default function extendWorker(worker: any|null) 
 {
 	return Object.assign(worker, (worker === globalThis) ? receiver : controller);
 }
 
 const controller = {
 
-	sendCommand(command, data = {})
+	sendCommand(command: string, data = {})
 	{
 		this.postMessage({command: command, data: data});
 		return this;
 	},
 
-	handleReply(command, handler)
+	handleReply(command: string, handler: Function)
 	{
 		this.addEventListener("message", function(e)
 		{
@@ -27,7 +28,7 @@ const controller = {
 
 const receiver = {
 
-	handleCommand(command, handler)
+	handleCommand(command: string, handler: Function)
 	{
 		self.addEventListener("message", function(e)
 		{
@@ -39,7 +40,7 @@ const receiver = {
 		return self;
 	},
 
-	sendReply(command, data = {})
+	sendReply(command: string, data = {})
 	{
 		postMessage({command: command, data: data});
 		return self;
